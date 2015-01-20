@@ -101,11 +101,13 @@ class ListTree
      */
     public function getChildren($id)
     {
+        $result = array();
         $children = isset($this->list[$id]) ? $this->list[$id][$this->options['childrenKey']] : array();
         foreach ($children as $child) {
             unset($child[$this->options['childrenKey']]);
+            $result[$child[$this->options['primaryKey']]] = $child;
         }
-        return $children;
+        return $result;
     }
 
     /**
