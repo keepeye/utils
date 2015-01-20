@@ -102,7 +102,7 @@ class ListTree
     public function getChildren($id)
     {
         $children = isset($this->list[$id]) ? $this->list[$id][$this->options['childrenKey']] : array();
-        foreach ($children as &$child) {
+        foreach ($children as $child) {
             unset($child[$this->options['childrenKey']]);
         }
         return $children;
