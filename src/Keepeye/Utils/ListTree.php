@@ -170,9 +170,9 @@ class ListTree
      * @param int $id 指定节点id
      * @return array
      */
-    public function getOffspringIds($id)
+    public function getOffspringIds($id,$except=0)
     {
-        return array_keys($this->getOffspring($id));
+        return array_keys($this->getOffspring($id,$except));
     }
 
     /**
